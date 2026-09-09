@@ -60,50 +60,111 @@ setYoutubeVideo(`https://www.youtube.com/embed/${videoKey}`);
   return (
     <>
     <Navbar/>
-    <div className="relative min-h-screen overflow-hidden ">
+    <div className="relative min-h-screen overflow-hidden bg-[#03121d]">
 
-<div className='w-screen h-screen  bg-cover bg-center '
-style={{
-    backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`
-  }}>
+{/* Movie Hero Section */}
+<div
+  className="relative min-h-screen bg-cover bg-center"
+  style={{
+    backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+  }}
+>
 
-    <div className="absolute inset-0 h-screen bg-[#03121d]/80"></div>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-[#03121d]/80"></div>
 
-<div className='absolute px-10 py-15 gap-10 text-white flex wrap-break-word justify-around'> 
-  <div>
-   <img
-   className=' h-120 w-140 rounded-2xl min-h-100 min-w-80 '
-        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-        alt={movie.title}
-      />
+  {/* Content */}
+  <div className="relative z-10 min-h-screen px-5 py-10 sm:px-8 md:px-12 lg:px-16">
+
+    <div className="flex min-h-screen flex-col items-center justify-center gap-10 lg:flex-row lg:gap-16">
+
+      {/* Poster */}
+      <div className="shrink-0">
+        <img
+          className="
+            h-auto
+            w-64
+            rounded-2xl
+            shadow-2xl
+            sm:w-72
+            md:w-80
+            lg:w-96
+          "
+          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          alt={movie.title}
+        />
+      </div>
+
+      {/* Movie Details */}
+      <div className="flex w-full max-w-2xl flex-col gap-4 text-center text-white lg:text-left">
+
+        {/* Title */}
+        <h1 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
+          {movie.title}
+        </h1>
+
+        {/* Movie Info */}
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-gray-300 lg:justify-start">
+          <span>{movie.release_date}</span>
+
+          <span>
+            {movie.origin_country?.[0] || "N/A"}
+          </span>
+
+          <span>
+            {movie.genres?.[0]?.name || "N/A"}
+          </span>
+        </div>
+
+        {/* Tagline */}
+        {movie.tagline && (
+          <p className="text-base italic text-gray-300 sm:text-lg">
+            "{movie.tagline}"
+          </p>
+        )}
+
+        {/* Overview */}
+        <h2 className="mt-2 text-2xl font-semibold">
+          Overview
+        </h2>
+
+        <p className="text-sm leading-6 text-gray-300 sm:text-base">
+          {movie.overview}
+        </p>
+
+        {/* Rating */}
+        <p className="mt-2 text-lg font-semibold">
+          ⭐ Rating: {movie.vote_average?.toFixed(1)}
+        </p>
+
+      </div>
+
+    </div>
+  </div>
 </div>
-<div className='relative top-30 flex flex-col gap-3'>
-      <h1 className='text-4xl font-extrabold'>{movie.title}</h1>
-      <pre className='w-fit space-x-10'> {movie.release_date} {movie.origin_country[1]} {movie.genres[0].name}</pre>
-
-<p>{movie.tagline}</p>
-      <h1 className='font-semibold text-2xl'>Overview</h1>
-      <p className='text-sm'>{movie.overview}</p>
 
 
-      <p className='hover:underline hover:text-blue-700'>Rating: {movie.vote_average}</p>
+{/* Trailer Section */}
+<div className="border-t border-gray-800 bg-[#03121d] px-5 py-12 sm:px-8 md:px-12 lg:px-16">
 
-     
-      </div>
-      </div>
+  <h2 className="mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
+    🎬 Official Trailer
+  </h2>
+
+  <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-2xl shadow-2xl">
+
+    <iframe
+      className="aspect-video w-full"
+      src={youtubeVideo}
+      title="Movie Trailer"
+      allowFullScreen
+    ></iframe>
 
   </div>
-<div className=' flex justify-center border-t border-gray-800 pt-20 pb-20 bg-[#03121d]'>
-<iframe
-  width="560"
-  height="315"
-  src={`${youtubeVideo}`}
-  title="Movie Trailer"
-  allowFullScreen
-></iframe>
+
 </div>
-         
-    </div>
+
+</div>
     <Footer/>
     </>
   )
