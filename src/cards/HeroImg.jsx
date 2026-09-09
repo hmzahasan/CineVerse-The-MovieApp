@@ -18,7 +18,7 @@ const HeroImg = () => {
     }
     const HeroImage = moviesData.find(
       (moviesData) =>
-        moviesData.id === 1368337
+        moviesData.id === 860508
     );
     
   //  console.log(moviesData)
