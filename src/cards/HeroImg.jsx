@@ -16,10 +16,10 @@ const HeroImg = () => {
     if (!moviesData.length) {
       return <h1>No movies found</h1>;
     }
-    const HeroImage = moviesData.find(
-      (moviesData) =>
-        moviesData.id === 860508
-    );
+    // const HeroImage = moviesData.find(
+    //   (moviesData) =>
+    //     moviesData.id === 860508
+    // );
     
   //  console.log(moviesData)
     
@@ -31,7 +31,7 @@ const HeroImg = () => {
   className="w-full h-full min-h-150 bg-cover bg-center"
 
   style={{
-    backgroundImage: `url(https://image.tmdb.org/t/p/original${HeroImage.backdrop_path})`
+    backgroundImage: `url(https://image.tmdb.org/t/p/original${moviesData[3].backdrop_path})`
   }}
 >
     <h1 className='font-extrabold text-6xl absolute pl-4 top-120 text-white'>Welcome.</h1>
