@@ -9,9 +9,9 @@ import Footer from "./Footer";
 
 const Home = () => {
 
-  const {moviesData,loading} = useContext(AuthContext);
+  
 
-  // console.log("Home movies:", loading);
+  
 
   return (
     <div>

@@ -7,7 +7,7 @@ const Navbar = () => {
   const getMovies=(e)=>{
     e.preventDefault()
     navigate(`/search/${search}`)
-    console.log(search)
+   
   }
 
   const [search, setSearch] = useState("");

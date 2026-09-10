@@ -20,7 +20,7 @@ const moviesDetailData= await getMovieDetails(id)
 
 setMovie(moviesDetailData)
 
-// console.log(data)
+
 
 
 //  
@@ -34,7 +34,7 @@ useEffect(()=>{
     const videos= await getVideos(id)
     
     
-    console.log(videos)
+    
 
 
 
@@ -46,7 +46,7 @@ const trailer = videos.results.find(
     video.type === "Trailer"
 );
 
-console.log(trailer);
+
 const videoKey = trailer.key
 setYoutubeVideo(`https://www.youtube.com/embed/${videoKey}`);
 }

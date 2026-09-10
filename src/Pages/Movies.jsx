@@ -10,7 +10,7 @@ const Movies = () => {
 const{loading} =useContext(AuthContext)
     const navigate= useNavigate()
     const getDetails=(elem)=>{
-      // console.log(elem.id)
+    
     navigate(`/movie/${elem.id}`)
     }
 
@@ -21,11 +21,11 @@ const[movie,setMovie]= useState([])
 const allMovies= async()=>{
 const data= await getAllMovies(pageNumber)
 setMovie(data)
-console.log(data)
+
 }
 allMovies()
     },[pageNumber])
-console.log(pageNumber)
+
 
 if (loading) {
     return <Loading/>;

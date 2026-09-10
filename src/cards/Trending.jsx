@@ -10,7 +10,7 @@ const Trending = () => {
 const navigate = useNavigate()
    
 const getDetails=(elem)=>{
-  // console.log(elem.id)
+  
 navigate(`/movie/${elem.id}`)
 }
 
@@ -24,8 +24,7 @@ navigate(`/movie/${elem.id}`)
     return <h1>No movies found</h1>;
   }
 
-  // const movie = moviesData[0];
-// console.log(moviesData)
+ 
   return (
     
     <div className="px-10  flex gap-5 overflow-auto scrollbar-thumb-black mb-10">

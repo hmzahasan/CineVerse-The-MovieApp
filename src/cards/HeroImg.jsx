@@ -16,14 +16,7 @@ const HeroImg = () => {
     if (!moviesData.length) {
       return <h1>No movies found</h1>;
     }
-    // const HeroImage = moviesData.find(
-    //   (moviesData) =>
-    //     moviesData.id === 860508
-    // );
-    
-  //  console.log(moviesData)
-    
-  // console.log(movie.backdrop_path)
+  
   return (
     
     <div >

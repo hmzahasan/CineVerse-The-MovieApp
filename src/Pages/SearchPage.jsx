@@ -13,7 +13,7 @@ const SearchPage = () => {
     const {loading}= useContext(AuthContext)
 const navigate= useNavigate()
     const getDetails=(elem)=>{
-      // console.log(elem.id)
+      
     navigate(`/movie/${elem.id}`)
     }
 
@@ -26,13 +26,13 @@ const getSearchedMovie= async()=>{
 
   const data = await searchMovies(search);
   setResults(data);
-  console.log(data)
+  
   const Id = data[0].id
   
   const getRecommendation= async()=>{
     const data1= await recommendations(Id)
     setRecommend(data1)
-    console.log(data1)
+   
   }
   getRecommendation()
 }

@@ -20,7 +20,7 @@ import React, {
         try {
           const data = await getMovies();
   
-          // console.log("API DATA:", data);
+          
   
           setMoviesData(data);
   

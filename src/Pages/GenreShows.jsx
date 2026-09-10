@@ -15,7 +15,7 @@ const GenreShows = () => {
     const navigate = useNavigate()
    
 const getDetails=(elem)=>{
-  // console.log(elem.id)
+ 
 navigate(`/movie/${elem.id}`)
 }
     // setId(id)
@@ -25,7 +25,7 @@ const {loading} = useContext(AuthContext)
         const getGenre = async()=>{
             const data= await getMoviesByGenre(id)
             setGenre(data)
-            console.log(data)
+            
         }
         
         getGenre()

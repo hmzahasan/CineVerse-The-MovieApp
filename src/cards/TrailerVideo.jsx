@@ -16,15 +16,14 @@ const[videoKey,setVideoKey]= useState()
     const moviesDetailData= await getVideos(id)
     const videosData = moviesDetailData.results;
     setVideos(videosData)
-    
-    // console.log(moviesDetailData.results)
+  
     
     const trailer= videosData.find((video)=>
         video.site==="YouTube" &&
         video.type==="Trailer",
         
     )
-   console.log(trailer)
+ 
   
     const key= trailer.key
     setVideoKey(`https://www.youtube.com/embed/${key}`)
@@ -34,7 +33,7 @@ const[videoKey,setVideoKey]= useState()
     fetchDetails()
     
     },[id])
-    console.log(videos,videoKey)
+    
   
 if(loading){
   return <Loading/>;

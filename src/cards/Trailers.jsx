@@ -20,7 +20,7 @@ const navigate= useNavigate()
     const fetchDetails= async()=>{
     const data= await getTrailers()
     setTrailer(data)
-    // console.log(data)
+    
     
     }
     fetchDetails()
@@ -28,7 +28,7 @@ const navigate= useNavigate()
       },[])
 
       const getDetails=(elem)=>{
-        // console.log(elem.id)
+        
       navigate(`/movie/${elem.id}`)
       }
 
